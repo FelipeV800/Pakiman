@@ -1,5 +1,5 @@
 class Pokemon {
-    constructor (nombre, tipo, ps, atq, def, vel, atqEsp, defEsp) {
+    constructor(nombre, tipo, ps, atq, def, vel, atqEsp, defEsp) {
         this.imagen = new Image();
         this.nombre = nombre;
         this.tipo = tipo;
@@ -12,8 +12,11 @@ class Pokemon {
         this.imagen.src = imagenes[this.nombre];
     }
 
-    mostrar(){
-        document.body.appendChild(this.imagen);
+    mostrar() {
+        var idPokemon = "img" + this.nombre;
+        var pokemonImagen = document.body.appendChild(this.imagen);
+        pokemonImagen.setAttribute("id", idPokemon);
+
         document.write("<br/> <strong>" + this.nombre + "</strong> <br/>");
         document.write("Tipo: " + this.tipo + "<hr/>");
         document.write("Puntos de salud: " + this.vida + "<hr/>");
